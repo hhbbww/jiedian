@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		hello
+		<div class="son">son
+		</div>
+		<span>span</span>
+		<h1>
+		</h1>
+		<span></span>
+		<p>
+		</p>
+		<div>
+			
+		</div>
+
+	</div>
+</body>
+<script>
+		let son = document.querySelector('.son')
+		let Next_s= next(son,'p')
+		console.log(Next_s)
+		function next(element,tagname){
+			let parent = element.parentNode;
+			let child = parent.children;
+			let index = 0;
+			for(let i=0;i<child.length;i++){
+				if(child[i]==element){
+					index=i;
+					break;
+				}
+			}
+			let nextAll = Array.from(child).slice(index+1);
+			for(let i = 0;i<nextAll.length;i++){
+				if(nextAll[i].nodeName == tagname.toUpperCase()){
+					return nextAll[i];
+				}	
+			}
+			return null;
+		}
+
+</script>
+</html>
