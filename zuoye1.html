@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 100px;
+		height: auto;
+		border: 1px solid #ccc;
+	}
+	.box .son{
+		width: 100%;
+		height: auto;
+		background: gray;
+		border: 1px solid #000;
+		box-sizing: border-box;
+		color: #fff;
+	}
+	span{
+		width: 100%;
+		height: auto;
+		background: gray;
+		border: 1px solid #000;
+		box-sizing: border-box;
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="box">
+		hello
+		<div class="son">son
+		</div>
+		<span>span</span>
+		<h1>
+		</h1>
+		<span></span>
+		<p>
+		</p>
+		<div>
+			
+		</div>
+
+	</div>
+</body>
+	<script>
+		let son = document.querySelector('.son')
+		let Next_s= next(son)
+		let Next_s1= next1(son)
+		console.log(Next_s)
+		console.log(Next_s1)
+		function next(element,tagname){
+			let parent = element.parentNode;
+			let child = parent.children;
+			let index = 0;
+			for(let i=0;i<child.length;i++){
+				if(child[i]==element){
+					index=i;
+					break;
+				}
+			}
+		let nextAll = Array.from(child).slice(index+1);
+		return nextAll;
+		}
+		function next1(element,tagname){
+			let parent = element.parentNode;
+			let child = parent.children;
+			let index = 0;
+			for(let i=0;i<child.length;i++){
+				if(child[i]==element){
+					index=i;
+					break;
+				}
+			}
+		let nextAll = Array.from(child).slice(index-1);
+		return nextAll;
+		}
+
+
+	</script>
+</html>
