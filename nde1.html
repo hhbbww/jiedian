@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<style>	
+		.yuanxin{
+			width: 	1px;
+			height: 1px;
+			border-radius: 	50%;
+			background: red;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+
+		}
+		.cli{
+		width:20px;
+		height: 20px;
+		background: rgb(1, 2, 3);
+		border-radius: 50%;
+		position: absolute;
+		}
+</style>
+<body>
+	<div class="yuanxin"></div>
+</body>
+<script>
+	window.onload =function(){
+		for(let i=0;i<37;i++){
+			let box = document.createElement('div');
+			let yuanxin = document.querySelector('.yuanxin')
+			box.className= 'cli';
+			yuanxin.appendChild(box);
+			let deg = (Math.PI*2/36)*i;
+			box.style.left=`${200*Math.cos(deg)}`+'px'
+			box.style.top=`${200*Math.sin(deg)}`+'px'
+
+		}
+	}
+</script>
+</html>

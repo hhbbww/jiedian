@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.cli{
+		width:50px;
+		height: 50px;
+		background: rgb(1, 2, 3);
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transition: all 1s	 cubic-bezier(0.4, 0, 1, 1);
+	}
+</style>
+<body>
+	<script>
+	window.onload = function(){
+		
+		
+		for(let i=0;i<100;i++){
+			let box = document.createElement('div');
+			box.className= 'cli';
+			document.body.appendChild(box);
+			let lefts = innerWidth-100;
+			let tops= innerHeight-100;
+			let x = Math.floor(Math.random()*lefts);
+			let y = Math.floor(Math.random()*tops);
+			let widths = Math.floor(Math.random()*70+30);
+			box.style.width=widths+'px'
+			box.style.height=widths+'px'
+			
+			let a_1 =Math.floor(Math.random()*255);
+			let b_2 =Math.floor(Math.random()*255);
+			let c_3 =Math.floor(Math.random()*255);
+			box.style.background='rgb('+a_1+','+b_2+','+c_3+')';
+			setTimeout(function(){
+				box.style.transitionDelay=`${i*10}`+'ms'
+				box.style.left=x+'px';
+				box.style.top=y+'px';
+			},5)
+		}
+		
+		
+		
+
+
+	}
+	</script>
+</body>
+</html>
